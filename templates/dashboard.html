@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2 data-i18n="dashboard">Dashboard</h2>
+
+<div class="weather-section">
+    <h3 data-i18n="weather_update">Real-time Weather Update</h3>
+    {% if weather %}
+    <p><strong>{{ weather.description|capitalize }}</strong>, {{ weather.temperature }} °C</p>
+    <p>Humidity: {{ weather.humidity }}%, Wind Speed: {{ weather.wind_speed }} m/s</p>
+    <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="Weather Icon" />
+    <p><small>Last updated: {{ weather.date }}</small></p>
+    {% else %}
+    <p>Weather data not available.</p>
+    {% endif %}
+</div>
+
+<div class="recommendation-section">
+    <h3 data-i18n="crop_recommendations">Crop Recommendations</h3>
+    <ul>
+        {% for crop in crop_recommendations %}
+            <li>{{ crop }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+<div class="guidance-section">
+    <h3 data-i18n="fertilizer_guidance">Fertilizer Guidance</h3>
+    <p>{{ fertilizer_guidance }}</p>
+</div>
+
+<div class="guidance-section">
+    <h3 data-i18n="pest_control_guidance">Pest Control Guidance</h3>
+    <p>{{ pest_control_guidance }}</p>
+</div>
+
+<!-- Chatbot widget -->
+<div id="chatbot" role="region" aria-label="Chatbot">
+    <div id="chatbot-header" data-i18n="welcome">Smart Crop Advisor</div>
+    <div id="chatbot-messages" aria-live="polite" aria-relevant="additions" tabindex="0"></div>
+    <form id="chatbot-form" aria-label="Chatbot input form" autocomplete="off">
+        <input type="text" id="chatbot-input" placeholder="Ask your farming question..." aria-label="Chatbot input" required />
+        <button type="submit" id="chatbot-send-btn" data-i18n="send">Send</button>
+    </form>
+</div>
+{% endblock %}

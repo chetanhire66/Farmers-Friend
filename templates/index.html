@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 data-i18n="login">Login</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        <label for="mobile" data-i18n="mobile">Mobile Number</label>
+        <input type="text" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder="e.g. 9876543210" />
+
+        <label for="password" data-i18n="password">Password</label>
+        <input type="password" id="password" name="password" required minlength="6" />
+
+        <button type="submit" data-i18n="submit">Submit</button>
+    </form>
+
+    <hr />
+
+    <h2 data-i18n="register">Register</h2>
+    <form method="POST" action="{{ url_for('register') }}">
+        <label for="name" data-i18n="name">Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="mobile_reg" data-i18n="mobile">Mobile Number</label>
+        <input type="text" id="mobile_reg" name="mobile" required pattern="[0-9]{10}" placeholder="e.g. 9876543210" />
+
+        <label for="location" data-i18n="location">Location</label>
+        <input type="text" id="location" name="location" required />
+
+        <label for="land_size" data-i18n="land_size">Land Size (acres)</label>
+        <input type="number" step="0.01" id="land_size" name="land_size" required min="0" />
+
+        <label for="preferred_crops" data-i18n="preferred_crops">Preferred Crops (comma separated)</label>
+        <input type="text" id="preferred_crops" name="preferred_crops" />
+
+        <label for="password_reg" data-i18n="password">Password</label>
+        <input type="password" id="password_reg" name="password" required minlength="6" />
+
+        <label for="confirm_password" data-i18n="confirm_password">Confirm Password</label>
+        <input type="password" id="confirm_password" name="confirm_password" required minlength="6" />
+
+        <button type="submit" data-i18n="submit">Submit</button>
+    </form>
+{% endblock %}

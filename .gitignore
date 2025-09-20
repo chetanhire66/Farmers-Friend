@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+crop_venv/
+app.db
+.env
+*.sqlite3

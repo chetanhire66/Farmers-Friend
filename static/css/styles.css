@@ -1,0 +1,218 @@
+/* --- Body and Base --- */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f7f9f9, #e0f2f1);
+    margin: 0;
+    padding: 0;
+    color: #333;
+    transition: background 0.5s;
+}
+
+/* --- Header / Navbar --- */
+header {
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    animation: gradientBG 5s ease infinite;
+}
+
+nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+    color: #ffeb3b;
+    transform: scale(1.1);
+}
+
+/* --- Container --- */
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background: linear-gradient(135deg, #ffffff, #f1f8e9);
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* --- Form Elements --- */
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: border 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 8px rgba(67,160,71,0.4);
+    transform: scale(1.02);
+}
+
+/* --- Buttons --- */
+button {
+    margin-top: 15px;
+    background: linear-gradient(45deg, #2e7d32, #66bb6a);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.5s, transform 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(45deg, #66bb6a, #a5d6a7);
+    transform: scale(1.1);
+}
+
+/* --- Sections --- */
+.weather-section, .recommendation-section, .guidance-section {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #c8e6c9, #f1f8e9);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, background 0.5s;
+}
+
+.weather-section:hover, .recommendation-section:hover, .guidance-section:hover {
+    transform: scale(1.02);
+    background: linear-gradient(135deg, #a5d6a7, #e8f5e9);
+}
+
+/* --- Chatbot --- */
+#chatbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 340px;
+    max-height: 450px;
+    background: linear-gradient(145deg, #ffffff, #e0f7fa);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 14px;
+    z-index: 1000;
+    animation: slideIn 0.6s ease-out;
+}
+
+#chatbot-header {
+    background: linear-gradient(90deg, #009688, #26a69a);
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    text-align: center;
+    animation: gradientBG 6s ease infinite;
+}
+
+#chatbot-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background: #e0f2f1;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 10px;
+    opacity: 0;
+    animation: fadeInMessage 0.5s forwards;
+}
+
+.message.farmer {
+    text-align: right;
+}
+
+.message.bot {
+    text-align: left;
+}
+
+#chatbot-input-area {
+    display: flex;
+    padding: 6px;
+    border-top: 1px solid #ccc;
+}
+
+#chatbot-input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: border 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+#chatbot-input:focus {
+    border-color: #009688;
+    box-shadow: 0 0 8px rgba(0,150,136,0.4);
+    transform: scale(1.02);
+}
+
+#chatbot-send-btn {
+    background: linear-gradient(45deg, #009688, #26a69a);
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    margin-left: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.5s, transform 0.3s;
+}
+
+#chatbot-send-btn:hover {
+    background: linear-gradient(45deg, #26a69a, #80cbc4);
+    transform: scale(1.1);
+}
+
+/* --- Language Dropdown --- */
+.language-select {
+    margin-left: 10px;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateY(50px) scale(0.8); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes fadeInMessage {
+    0% { opacity: 0; transform: translateX(-20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

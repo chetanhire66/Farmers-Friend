@@ -1,0 +1,23 @@
+{
+    "welcome": "Welcome to Smart Crop Advisor",
+    "login": "Login",
+    "register": "Register",
+    "name": "Name",
+    "mobile": "Mobile Number",
+    "location": "Location",
+    "land_size": "Land Size (acres)",
+    "preferred_crops": "Preferred Crops (comma separated)",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "submit": "Submit",
+    "logout": "Logout",
+    "dashboard": "Dashboard",
+    "weather_update": "Real-time Weather Update",
+    "crop_recommendations": "Crop Recommendations",
+    "fertilizer_guidance": "Fertilizer Guidance",
+    "pest_control_guidance": "Pest Control Guidance",
+    "chatbot_placeholder": "Ask your farming question...",
+    "send": "Send",
+    "language": "Language",
+    "yellow_leaves_response": "Yellow leaves can be due to nutrient deficiency or pests. Ensure balanced fertilization and check for pests."
+}
